@@ -2,7 +2,7 @@
 
 ### Object attribute cleaner
 
-![Mx Toolkit license badge](https://img.shields.io/github/license/Mx-Toolkit/java-clear-object) ![Mendix Version Badge](https://img.shields.io/badge/Category-JavaAction-gren) ![Mendix Version Badge](https://img.shields.io/badge/Mendix-v9.6.x-blue)
+![Mx Toolkit license badge](https://img.shields.io/github/license/Mendix-Toolkit/java-clear-object) ![Mendix Version Badge](https://img.shields.io/badge/Category-JavaAction-gren) ![Mendix Version Badge](https://img.shields.io/badge/Mendix-v9.6.x-blue)
 
 ## Use Case
 
