@@ -11,10 +11,14 @@ package clearobject.actions;
 
 import java.util.Map;
 import java.util.Map.Entry;
+import java.math.BigDecimal;
 import com.mendix.core.Core;
 import com.mendix.logging.ILogNode;
 import com.mendix.webui.CustomJavaAction;
 import com.mendix.core.objectmanagement.member.MendixBoolean;
+import com.mendix.core.objectmanagement.member.MendixDecimal;
+import com.mendix.core.objectmanagement.member.MendixInteger;
+import com.mendix.core.objectmanagement.member.MendixLong;
 import com.mendix.core.objectmanagement.member.MendixAutoNumber;
 import com.mendix.core.objectmanagement.member.MendixObjectReference;
 import com.mendix.core.objectmanagement.member.MendixObjectReferenceSet;
@@ -23,6 +27,10 @@ import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.systemwideinterfaces.core.meta.IMetaObject;
 import com.mendix.systemwideinterfaces.core.IMendixObjectMember;
 
+/**
+ * For documentation, refer to the original repository:
+ * https://github.com/Mendix-Toolkit/java-clear-object
+ */
 public class Java_ClearObject extends CustomJavaAction<java.lang.Void>
 {
 	private java.lang.String logNode;
@@ -60,11 +68,20 @@ public class Java_ClearObject extends CustomJavaAction<java.lang.Void>
 				// getMembers() returns non-editable map
 				String memberName = mapMember.getKey();
 				IMendixObjectMember<?> member = targetObject.getMember(context, memberName);
-				
+
 				if (member instanceof MendixAutoNumber)
 					continue;
 				else if (member instanceof MendixBoolean) {
 					targetObject.setValue(context, memberName, false);
+					continue;
+				} else if (member instanceof MendixInteger) {
+					targetObject.setValue(context, memberName, 0);
+					continue;
+				} else if (member instanceof MendixDecimal) {
+					targetObject.setValue(context, memberName, new BigDecimal("0.0"));
+					continue;
+				} else if (member instanceof MendixLong) {
+					targetObject.setValue(context, memberName, 0l);
 					continue;
 				}
 
