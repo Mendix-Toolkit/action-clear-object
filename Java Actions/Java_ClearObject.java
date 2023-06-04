@@ -29,7 +29,7 @@ import com.mendix.systemwideinterfaces.core.IMendixObjectMember;
 
 /**
  * For documentation, refer to the original repository:
- * https://github.com/Mendix-Toolkit/java-clear-object
+ * https://github.com/Mendix-Toolkit/action-clear-object
  */
 public class Java_ClearObject extends CustomJavaAction<java.lang.Void>
 {
